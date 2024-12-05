@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Painting from './Painting';
-import Pagination from './pagination';
-import SearchBar from './recherche.jsx';
+import Pagination from './Pagination';
+import SearchBar from './Recherche.jsx';
 
 function App() {
   const [page, setPage] = useState(1);
