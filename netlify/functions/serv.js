@@ -1,11 +1,15 @@
 export const handler = async (event, context)=> {
-    const params = event.queryStringParameters;
-    // console.log(params.searchTerm);
+    const url = new URL(event.rawUrl);
+    const params= {
+        page: url.searchParams.get('page')
+            ? parseInt(url.searchParams.get('page'))
+            : undefined,
+    }
     const API_KEY = "7ROyDsd0";
     const CULTURE = "en"; 
 
     const response = await fetch(
-        `https://www.rijksmuseum.nl/api/${CULTURE}/collection?key=${API_KEY}&q=Rembrandt&ps=10&imgonly=true`
+        `https://www.rijksmuseum.nl/api/${CULTURE}/collection?key=${API_KEY}&p=${params.page}&imgonly=true`
       );
       const data = await response.json();
 
