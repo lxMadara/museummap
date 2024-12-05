@@ -1,20 +1,17 @@
-
-body {
+body { 
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
   color: #333;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.6;    
 }
-
 
 .app {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-
 
 .search-bar {
   display: flex;
@@ -52,7 +49,6 @@ body {
 .search-button:hover {
   background-color: #1cb114;
 }
-
 
 .painting {
   display: flex;
@@ -96,7 +92,6 @@ body {
   font-size: 14px;
 }
 
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -136,4 +131,60 @@ body {
 
 .error {
   color: #ff414d;
+}
+
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .painting-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .painting-info h3 {
+    font-size: 16px;
+  }
+
+  .pagination button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .search-input {
+    width: 90%;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .painting-card {
+    width: 100%;
+  }
+
+  .painting-info h3 {
+    font-size: 14px;
+  }
+
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
 }

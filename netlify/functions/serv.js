@@ -4,12 +4,14 @@ export const handler = async (event, context)=> {
         page: url.searchParams.get('page')
             ? parseInt(url.searchParams.get('page'))
             : undefined,
+        search: url.searchParams.get("search") ? url.searchParams.get("search") : undefined
     }
     const API_KEY = "7ROyDsd0";
     const CULTURE = "en"; 
-
+let link =  `https://www.rijksmuseum.nl/api/${CULTURE}/collection?key=${API_KEY}&p=${params.page}&imgonly=true`
+if(params.search) link += `&q=${params.search}`
     const response = await fetch(
-        `https://www.rijksmuseum.nl/api/${CULTURE}/collection?key=${API_KEY}&p=${params.page}&imgonly=true`
+       link
       );
       const data = await response.json();
 

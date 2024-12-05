@@ -1,5 +1,7 @@
 
 function SearchBar({
+
+    
     onChange,
     page,
 
@@ -15,5 +17,8 @@ function SearchBar({
         </div>
     );
 }
+
+
+
 
 export default SearchBar;
