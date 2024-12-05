@@ -9,13 +9,13 @@ import AppConnection from './Componote/AppConnection'
 
 
 function App() {
-  
-  
+  const [ page, setPage]= useState(1);
+  const [currentData, setCurrentData] = useState([]);
   return (
     <>
 <AppConnection></AppConnection>
 
-{(() => {
+{/* {(() => {
   let list = []
            RicksFile.artObjects.map((art) => {
               list.push(
@@ -28,8 +28,15 @@ function App() {
               )
            })
            return list;
-          })()}
-<Pagination></Pagination>
+          })()} */}
+<Pagination 
+CurrentPAge={page}
+onPageChange={async (page) => {
+  setPage (page);
+  setCurrentData()
+}
+}>
+</Pagination>
 
     </>
   )

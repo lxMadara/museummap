@@ -5,22 +5,20 @@ const AppConnection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
- 
-  const API_KEY = "7ROyDsd0";
-  const CULTURE = "en"; 
-
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
         const response = await fetch(
-          `https://www.rijksmuseum.nl/api/${CULTURE}/collection?key=${API_KEY}&q=Rembrandt&ps=10&imgonly=true`
+          `/.netlify/functions/serv`
         );
 
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");
         }
-
+        console.log("TEST")
+       
         const data = await response.json();
+        console.log(data)
         setArtworks(data.artObjects); 
       } catch (err) {
         setError(err.message);
