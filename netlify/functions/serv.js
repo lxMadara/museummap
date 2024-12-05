@@ -11,8 +11,8 @@ export const handler = async (event, context)=> {
 
 
     return{
-        statusCode: 500, 
-        body: JSON.stringify("test"),
+        statusCode: 200, 
+        body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' },
     };
 }
