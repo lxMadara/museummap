@@ -1,15 +1,26 @@
 import style from "./Painting.module.css";
-function Painting() {
+function Painting({
+    image,
+    artist
+}) {
 
     return (
         <div className={style.imageContainers}>
 
-            <img className={style.image} src="https://lh3.googleusercontent.com/SwwiVAxnwFE_s-k7-bPOZ6jnGfcuVDJoZ-ofLb0Zispb-mJdsfasrE1nTPRcGDPwyEqY0txKpjPcAWaIIltYvvPtDA8=s0"></img>
-            <p>Portrait of don Ramon satué</p>
-        </div>
-
+            <img className={style.image} src={image}></img>
+            <p>{artist}</p>
+              </div>
+            
     )
+        
+
+
 }
 
 
 export default Painting
+
+
+
+
+
