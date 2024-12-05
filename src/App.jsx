@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Painting from './Painting';
-import SearchBar from './recherche';
-import Pagination from './pagination';
+import SearchBar from './SearchBar';
+import Paginate from './Paginate'
 
 function App() {
   const [page, setPage] = useState(1);
@@ -56,7 +56,7 @@ function App() {
           />
         ))}
       </div>
-      <Pagination
+      <Paginate
         CurrentPage={page}
         onPageChange={async (newPage) => {
           setPage(newPage);

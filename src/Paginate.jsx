@@ -1,5 +1,5 @@
 import style from "./Painting.module.css";
-function Pagination({
+function Paginate({
     onPageChange,
     CurrentPAge
     
@@ -24,6 +24,4 @@ function Pagination({
 
 }
 
-
-
-export default Pagination
+export default Paginate
